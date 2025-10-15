@@ -1,0 +1,29 @@
+.wa-floating-btn {
+  position: fixed;
+    bottom: 50px;
+    right: 50px;
+  z-index: 9999;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.wa-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.wa-floating-btn.bottom-left {
+  left: 25px;
+  right: auto;
+}
+.wa-floating-btn img {
+    width: 200px !important;
+    height: 60px !important;
+}

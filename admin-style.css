@@ -1,0 +1,73 @@
+/* Container wrapper */
+.carbon-box {
+    max-width: 800px !important;
+    margin: 20px auto !important;
+    padding: 25px !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important;
+}
+
+/* Labels */
+.cf-field__label {
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    display: block !important;
+    margin-bottom: 6px !important;
+    color: #333 !important;
+}
+
+/* Inputs / Text / Number / Select */
+.cf-text__input,
+.cf-number__input,
+.cf-select__input,
+.cf-textarea__textarea,
+.cf-color__togglet {
+    width: 100% !important;
+    padding: 10px 12px !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    border: 1px solid #ccc !important;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.cf-text__input:focus,
+.cf-number__input:focus,
+.cf-select__input:focus,
+.cf-textarea__textarea:focus,
+.cf-color__togglet:focus  {
+    border-color: #25D366 !important;
+    box-shadow: 0 0 5px rgba(37, 211, 102, 0.5) !important;
+    outline: none !important;
+}
+
+/* Help text */
+.crb-description {
+    font-size: 0.875rem !important;
+    color: #666 !important;
+    margin-top: 5px !important;
+}
+
+/* Checkbox & radio */
+.cf-field__label ,
+.cf-radio__label {
+    font-weight: 500 !important;
+    cursor: pointer !important;
+}
+
+/* Buttons */
+.button-primary  {
+    background-color: #25D366 !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.button-primary:hover {
+    background-color: #1ebe57 !important;
+}
