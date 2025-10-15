@@ -36,14 +36,44 @@ if ( file_exists( plugin_dir_path(__FILE__) . 'vendor/autoload.php' ) ) {
 }
 
 // -------------------------
-// Boot Carbon Fields
+// Load Carbon Fields & fields
 // -------------------------
-\Carbon_Fields\Carbon_Fields::boot();
+add_action('after_setup_theme', function() {
+    // Only if Composer autoload exists
+    $autoload_path = plugin_dir_path(__FILE__) . 'vendor/autoload.php';
+    if ( file_exists( $autoload_path ) ) {
+        require_once $autoload_path;
+    } else {
+        return;
+    }
 
+    // Boot Carbon Fields
+    if ( class_exists('\Carbon_Fields\Carbon_Fields') ) {
+        \Carbon_Fields\Carbon_Fields::boot();
+
+        // Include fields after booting
+        $fields_path = plugin_dir_path(__FILE__) . 'includes/fields.php';
+        if ( file_exists($fields_path) ) {
+            require_once $fields_path;
+        }
+    }
+});
 // -------------------------
-// Include settings fields
+// GitHub Update Checker
 // -------------------------
-require_once plugin_dir_path(__FILE__) . 'includes/fields.php';
+require plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$updateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/themiya125/Web-Advisor-Whats-App/', // Your GitHub repo URL
+    __FILE__,
+    'webadvisor-whatsapp' // Plugin slug, usually same as folder name
+);
+
+// Optional: specify branch if not main
+$updateChecker->setBranch('main');
+
 
 // -------------------------
 // Enqueue frontend styles
@@ -93,15 +123,3 @@ if ( $use_icon && ! empty($icon_text) ) {
     <?php
 });
 
-require plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
-
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
-$updateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/themiya125/Web-Advisor-Whats-App/',
-    __FILE__,
-    'webadvisor-whatsapp'
-);
-
-// Optional: specify branch (if not main)
-$updateChecker->setBranch('main');
