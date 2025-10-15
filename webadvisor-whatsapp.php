@@ -6,7 +6,7 @@ Description: Floating WhatsApp chat button with customizable options
 Version: 1.0
 Author: Web Advisor | Themiya Jayakodi
 Author URI: https://webadvisorlk.com/
-License: GPL2
+License: GPL3
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
