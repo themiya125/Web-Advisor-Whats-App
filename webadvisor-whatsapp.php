@@ -11,18 +11,6 @@ License: GPL2
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-require plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
-
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
-$updateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/themiya125/Web-Advisor-Whats-App/',
-    __FILE__,
-    'webadvisor-whatsapp'
-);
-
-// Optional: specify branch (if not main)
-$updateChecker->setBranch('main');
 
 
 // -------------------------
@@ -104,3 +92,16 @@ if ( $use_icon && ! empty($icon_text) ) {
     </a>
     <?php
 });
+
+require plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$updateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/themiya125/Web-Advisor-Whats-App/',
+    __FILE__,
+    'webadvisor-whatsapp'
+);
+
+// Optional: specify branch (if not main)
+$updateChecker->setBranch('main');
