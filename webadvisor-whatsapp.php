@@ -3,7 +3,7 @@
 Plugin Name: Web Advisor WhatsApp Chat Button
 Plugin URI: https://webadvisorlk.com/
 Description: Floating WhatsApp chat button with customizable options
-Version: 1.0
+Version: 1.2
 Author: Web Advisor | Themiya Jayakodi
 Author URI: https://webadvisorlk.com/
 License: GPL3
